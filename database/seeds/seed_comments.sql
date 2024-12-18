@@ -1,0 +1,19 @@
+-- backend/database/seeds/seed_comments.sql
+
+-- 세션 타임존 설정
+SET time_zone = 'Asia/Seoul';
+
+-- FOREIGN KEY 비활성화
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- 기존 데이터 유지 및 업데이트
+REPLACE INTO comments (id, content, user_id, post_id, created_at, updated_at, deleted_at)
+VALUES
+  (UNHEX('a23e4567e89b12d3a456426614174001'), '첫 번째 게시글에 대한 첫 번째 댓글입니다.', UNHEX('123e4567e89b12d3a456426614174000'), UNHEX('423e4567e89b12d3a456426614174003'), NOW(), NOW(), NULL),
+  (UNHEX('b23e4567e89b12d3a456426614174002'), '첫 번째 게시글에 대한 두 번째 댓글입니다.', UNHEX('223e4567e89b12d3a456426614174001'), UNHEX('423e4567e89b12d3a456426614174003'), NOW(), NOW(), NULL),
+  (UNHEX('c23e4567e89b12d3a456426614174003'), '두 번째 게시글에 대한 첫 번째 댓글입니다.', UNHEX('323e4567e89b12d3a456426614174002'), UNHEX('523e4567e89b12d3a456426614174004'), NOW(), NOW(), NULL),
+  (UNHEX('d23e4567e89b12d3a456426614174004'), '세 번째 게시글에 대한 첫 번째 댓글입니다.', UNHEX('123e4567e89b12d3a456426614174000'), UNHEX('623e4567e89b12d3a456426614174005'), NOW(), NOW(), NULL),
+  (UNHEX('e23e4567e89b12d3a456426614174005'), '네 번째 게시글에 대한 첫 번째 댓글입니다.', UNHEX('223e4567e89b12d3a456426614174001'), UNHEX('723e4567e89b12d3a456426614174006'), NOW(), NOW(), NULL);
+
+-- FOREIGN KEY 활성화
+SET FOREIGN_KEY_CHECKS = 1;
