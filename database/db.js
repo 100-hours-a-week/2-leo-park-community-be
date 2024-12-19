@@ -13,7 +13,7 @@ const __dirname = path.dirname(__filename);
 
 dotenv.config();
 
-const pemFilePath = path.resolve(__dirname, '../../', process.env.PEM_FILE_PATH);
+const pemFilePath = path.resolve(__dirname, process.env.PEM_FILE_PATH);
 console.log('PEM File Path:', pemFilePath); // 디버깅용
 
 // 데이터베이스 연결을 위한 풀 생성
